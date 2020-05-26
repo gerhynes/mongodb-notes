@@ -77,3 +77,22 @@ Your database is seperated from the frontend by a web server. The web server fil
 Security around your data is enforced by rules that you place in your web server.
 
 Mongoose is an ORM (Object Relational Mapper) or ODM (Object Data Mapping) which helps you to work with your database.
+
+## Mongo Core Principals
+
+Mongo lets you create multiple databases inside one Mongo instance.
+
+The collection is the core unit which stores data inside a Mongo database.
+
+You will typically have one collection for each type of resource that you need to make available in your app.
+
+Ahead of time, you will design a schema for the different types of data you'll need to store in your app.
+
+## Core Mongoose and Mongo Ideas
+
+When working with a Mongo database there are four key operations:
+
+- Create
+- Read
+- Update
+- Destroy
