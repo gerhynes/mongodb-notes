@@ -96,3 +96,27 @@ When working with a Mongo database there are four key operations:
 - Read
 - Update
 - Destroy
+
+## Models
+
+Mongoose creates models that represent all records in a specific collection.
+
+The model is used to create objects that represent single instances within the collection (single records in the database).
+
+Models have a schema which tells us exactly what properties you can expect each record in the collection to have and what type of data we expect it to be.
+
+A model does not represent any particular record inside the application, it represents the entire collection of data inside the database.
+
+## Mocha
+
+Every test file has a Describe block (basically a Describe function).
+
+Inside the function are a variety of it blocks.
+
+Inside each it block is code to test a very specific part of the code in the model.
+
+### isNew
+
+Whenever you create a new model Mongoose will place an `isNew` flag on the model to show it hasn't yet been saved to the database.
+
+Initially `isNew` is set to `true`. Once the record has been saved, `isNew` is set to `false`.
