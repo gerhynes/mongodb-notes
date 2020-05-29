@@ -120,3 +120,22 @@ Inside each it block is code to test a very specific part of the code in the mod
 Whenever you create a new model Mongoose will place an `isNew` flag on the model to show it hasn't yet been saved to the database.
 
 Initially `isNew` is set to `true`. Once the record has been saved, `isNew` is set to `false`.
+
+## Mongoose Queries
+
+`User.find(criteria)` - Find all the users that match the given criteria. Returns an array.
+
+`User.findOne(criteria)` - Find the first user that matches the criteria. Returns a single record.
+
+## The \_id Property
+
+In contrast to other ORMs, Mongoose assigns an id to a record as soon as it is created, before it is saved to the database.
+
+The `_id` property of a Mongo record is not the raw string of the id. The `_id` is an object that encapsulates that string.
+
+To compare the `_id` of a record when it is created and when it is in the database, you need to call `toString()` on both `_id`s.
+
+```js
+assert(users[0]._id === joe._id); // false
+assert(users[0]._id.toString() === joe._id.toString()); // true
+```
