@@ -139,3 +139,13 @@ To compare the `_id` of a record when it is created and when it is in the databa
 assert(users[0]._id === joe._id); // false
 assert(users[0]._id.toString() === joe._id.toString()); // true
 ```
+
+## Removing records
+
+Mongoose uses the terminology "remove", not "delete".
+
+Individual model instances have a `remove` method.
+
+Model classes also have a `remove` method, into which you pass some criteria in order to find specific instances in the database.
+
+Model classes also have a `findOneAndRemove` and `findByIdAndRemove` methods.
