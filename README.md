@@ -149,3 +149,9 @@ Individual model instances have a `remove` method.
 Model classes also have a `remove` method, into which you pass some criteria in order to find specific instances in the database.
 
 Model classes also have a `findOneAndRemove` and `findByIdAndRemove` methods.
+
+## Updating a Record
+
+Individual model instances can be updated using the `update` method or the `set` and `save` functions.
+
+Model classes can be updated using the `update`, `findOneAndUpdate` and `findByIdAndUpdate` methods.
