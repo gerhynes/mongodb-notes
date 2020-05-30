@@ -10,7 +10,9 @@ describe("Deleting a user", () => {
       done();
     });
   });
+
   it("model instance remove", (done) => {
+    // Remove one specific record
     joe
       .remove()
       .then(() => User.findOne({ name: "Joe" }))
@@ -19,7 +21,32 @@ describe("Deleting a user", () => {
         done();
       });
   });
-  it("class method remove", () => {});
-  it("class method findOneAndRemove", () => {});
-  it("class method findByIdAndRemove", () => {});
+
+  it("class method remove", (done) => {
+    // Remove multiple records with some common criteria
+    User.remove({ name: "Joe" })
+      .then(() => User.findOne({ name: "Joe" }))
+      .then((user) => {
+        assert(user === null);
+        done();
+      });
+  });
+
+  it("class method findOneAndRemove", (done) => {
+    User.findOneAndRemove({ name: "Joe" })
+      .then(() => User.findOne({ name: "Joe" }))
+      .then((user) => {
+        assert(user === null);
+        done();
+      });
+  });
+
+  it("class method findByIdAndRemove", (done) => {
+    User.findByIdAndRemove(joe._id)
+      .then(() => User.findOne({ name: "Joe" }))
+      .then((user) => {
+        assert(user === null);
+        done();
+      });
+  });
 });
