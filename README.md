@@ -155,3 +155,19 @@ Model classes also have a `findOneAndRemove` and `findByIdAndRemove` methods.
 Individual model instances can be updated using the `update` method or the `set` and `save` functions.
 
 Model classes can be updated using the `update`, `findOneAndUpdate` and `findByIdAndUpdate` methods.
+
+## Update Operators
+
+Update operators let you send an instruction to Mongo and Mongo will execute it inside the database.
+
+This is more performant than fetching the data from the database, modifying it on the server, and then sending it back to the database.
+
+`$inc` - increments the value of the field by the specified amount.
+
+`$mul` - multiplies the value of the field by the specified amount.
+
+`$rename` - renames a field.
+
+`$set` - set the value of a field in a document.
+
+These operators are especially useful when you want to change a lot of records in one go.
