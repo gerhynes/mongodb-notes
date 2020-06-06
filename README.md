@@ -177,3 +177,13 @@ These operators are especially useful when you want to change a lot of records i
 Mongoose lets you validate records against a specific criteria before inserting them into the database.
 
 Make the validation message user-readable, for example "Name is required", not "UserSchema Expected Name Prop".
+
+## Embedding Resources in Models
+
+In a relational database, if you wnated users to have blogposts associated with them, you might have a User model and a different Post model.
+
+With Mongo, since a post is always associated with one user, it would make nmore sense to have a list of posts inside the User model.
+
+The User model would have a user schema (with a name, postCount and list of posts) and a post schema (with title, content, etc.).
+
+Mongoose models are made to represent distinct collections that exist inside your MongoDb database.
