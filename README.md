@@ -171,3 +171,9 @@ This is more performant than fetching the data from the database, modifying it o
 `$set` - set the value of a field in a document.
 
 These operators are especially useful when you want to change a lot of records in one go.
+
+## Record Validation
+
+Mongoose lets you validate records against a specific criteria before inserting them into the database.
+
+Make the validation message user-readable, for example "Name is required", not "UserSchema Expected Name Prop".
