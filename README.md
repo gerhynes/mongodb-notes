@@ -203,3 +203,17 @@ A virtual type is any field on a model that does not get persisted to the MongoD
 For example, postCount can be calculated from looking at the length of the posts array, rather than being stored as its own value.
 
 When you try to access a virtual type, it runs a getter function which returns the value.
+
+## Embedded Documents vs Seperate Collections
+
+Instead of having nested subdocuments (such as users with posts nested inside and comments nested inside posts), you could have three different collections: User, Post, Comment.
+
+A User could have an array of postIds pointing to specific posts.
+
+In addition, a Post could have an array of commentIds pointing to specific comments.
+
+Each Comment could have a userId pointing back to a specific user.
+
+The downside to this approach is that queries get more complex. To get all posts by a particular user, you would have to fetch the user from the database and then go back and fetch the relevant posts connected to that user.
+
+Mongo doesn't have single operation joins, and so this quasi-relational approach isn't necessarily efficient for querying as you have to touch the database multiple times.
