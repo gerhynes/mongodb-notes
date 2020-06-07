@@ -178,7 +178,7 @@ Mongoose lets you validate records against a specific criteria before inserting 
 
 Make the validation message user-readable, for example "Name is required", not "UserSchema Expected Name Prop".
 
-## Embedding Resources in Models
+## Embedding Resources in Models (Sub-documents)
 
 In a relational database, if you wnated users to have blogposts associated with them, you might have a User model and a different Post model.
 
