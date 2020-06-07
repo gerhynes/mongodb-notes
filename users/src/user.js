@@ -12,6 +12,7 @@ const UserSchema = new Schema({
     required: [true, "Name is required."],
   },
   posts: [PostSchema],
+  likes: Number,
 });
 
 // Add postCount virtual type
