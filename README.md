@@ -191,3 +191,7 @@ Mongoose models are made to represent distinct collections that exist inside you
 ## Adding Subdocuments to Existing Records
 
 The only way to save a subdocument is to add it to the parent model and then call save on the parent model.
+
+## Removing Subdocuments
+
+When you remove a subdocuement, it does not automatically save the record in the database. You still have to manually call save on the parent record.
