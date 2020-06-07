@@ -178,7 +178,7 @@ Mongoose lets you validate records against a specific criteria before inserting 
 
 Make the validation message user-readable, for example "Name is required", not "UserSchema Expected Name Prop".
 
-## Embedding Resources in Models (Sub-documents)
+## Embedding Resources in Models (Subdocuments)
 
 In a relational database, if you wnated users to have blogposts associated with them, you might have a User model and a different Post model.
 
@@ -187,3 +187,7 @@ With Mongo, since a post is always associated with one user, it would make nmore
 The User model would have a user schema (with a name, postCount and list of posts) and a post schema (with title, content, etc.).
 
 Mongoose models are made to represent distinct collections that exist inside your MongoDb database.
+
+## Adding Subdocuments to Existing Records
+
+The only way to save a subdocument is to add it to the parent model and then call save on the parent model.
