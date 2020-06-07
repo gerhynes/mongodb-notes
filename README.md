@@ -195,3 +195,11 @@ The only way to save a subdocument is to add it to the parent model and then cal
 ## Removing Subdocuments
 
 When you remove a subdocuement, it does not automatically save the record in the database. You still have to manually call save on the parent record.
+
+## Virtual Types
+
+A virtual type is any field on a model that does not get persisted to the MongoDB database.
+
+For example, postCount can be calculated from looking at the length of the posts array, rather than being stored as its own value.
+
+When you try to access a virtual type, it runs a getter function which returns the value.
