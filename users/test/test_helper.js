@@ -16,10 +16,14 @@ before((done) => {
     });
 });
 
-// Before each test clear out list of users
+// Before each test clear out collections
 beforeEach((done) => {
-  mongoose.connection.collections.users.drop(() => {
-    // Ready to run next test
-    done();
+  const { users, comments, blogposts } = mongoose.connection.collections;
+  users.drop(() => {
+    comments.drop(() => {
+      blogposts.drop(() => {
+        done();
+      });
+    });
   });
 });
