@@ -252,3 +252,9 @@ User.findOne({ name: "Joe" })
   })
   .then();
 ```
+
+## Middleware (Pre and Post Hooks)
+
+Middleware are functions that execute before and after some distinct event takes place with Mongoose. For example, right before and after a record is removed.
+
+The four events you can watch for in Mongoose are: init, validate, save and remove.
