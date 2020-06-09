@@ -227,3 +227,28 @@ Mongoose lets you add modifiers to enhance and customize your query.
 ```js
 User.findOne({ name: "Joe" }).populate("blogPosts").then();
 ```
+
+## Loading deeply nested associations
+
+Mongoose does not let you automatically recursively load all associations.
+
+To load nested associations, use the `.populate()` modifier and specify the paths to the documents in the other collections. You also pass their model instance to populate.
+
+```js
+User.findOne({ name: "Joe" })
+  .populate({
+    // load blogposts
+    path: "blogPosts",
+    // inside blogPosts load comments
+    populate: {
+      path: "comments",
+      model: "comment",
+      // inside comments load users
+      populate: {
+        path: "user",
+        model: "user",
+      },
+    },
+  })
+  .then();
+```
