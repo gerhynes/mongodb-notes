@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-
+const assert = require("assert");
 const User = require("../src/user");
 const Comment = require("../src/comment");
 const BlogPost = require("../src/blogPost");
@@ -30,9 +30,11 @@ describe("Associations", () => {
   it.only("saves a relation between a user and a blogpost", (done) => {
     User.findOne({
       name: "Joe",
-    }).then((user) => {
-      console.log(user);
-      done();
-    });
+    })
+      .populate("blogPosts")
+      .then((user) => {
+        assert(user.blogPosts[0].title === "JavaScript is great");
+        done();
+      });
   });
 });

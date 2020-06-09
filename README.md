@@ -218,3 +218,12 @@ The downside to this approach is that queries get more costly. To get all posts 
 
 Mongo doesn't have single operation joins, and so this quasi-relational approach isn't necessarily efficient for querying as you have to touch the database multiple times.
 
+## Queries
+
+A query does not automatically go off to your datbase. It only does so once `.then()` is called on it.
+
+Mongoose lets you add modifiers to enhance and customize your query.
+
+```js
+User.findOne({ name: "Joe" }).populate("blogPosts").then();
+```
