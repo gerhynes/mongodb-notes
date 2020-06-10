@@ -258,3 +258,11 @@ User.findOne({ name: "Joe" })
 Middleware are functions that execute before and after some distinct event takes place with Mongoose. For example, right before and after a record is removed.
 
 The four events you can watch for in Mongoose are: init, validate, save and remove.
+
+## Skip, Limit and Sort
+
+`skip()` lets you skip a specified number of records.
+
+`Limit()` restricts the number of results to a query.
+
+`sort()` lets you sort the results of a query. You can pass in an object specifying which value to sort by and in which order, for example `.sort({ name: 1 })`.
