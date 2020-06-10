@@ -263,6 +263,6 @@ The four events you can watch for in Mongoose are: init, validate, save and remo
 
 `skip()` lets you skip a specified number of records.
 
-`Limit()` restricts the number of results to a query.
+`limit()` restricts the number of results to a query.
 
 `sort()` lets you sort the results of a query. You can pass in an object specifying which value to sort by and in which order, for example `.sort({ name: 1 })`.
