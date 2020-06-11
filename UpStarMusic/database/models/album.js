@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const AlbumSchema = new Schema({
@@ -7,7 +7,7 @@ const AlbumSchema = new Schema({
   copiesSolid: Number,
   numberTracks: Number,
   image: String,
-  revenue: Number
+  revenue: Number,
 });
 
 module.exports = AlbumSchema;
