@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Slider from "react-input-range";
-import "react-input-range/lib/css/index.css";
 
 class Range extends Component {
   onChange(component, values) {
