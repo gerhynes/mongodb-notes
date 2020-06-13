@@ -278,3 +278,7 @@ This lets you make very fast lookups.
 The `_id` property of every record is indexed by default. You have the option to create your own indexes to make lookups faster for other properties.
 
 It's common to make your own index if you have a certain property that you find yourself querying for often.
+
+## The hidden `multi` setting
+
+To update multiple records at the same time, you need to pass in the `multi` option set to `true`. By default, `multi` is set to `false`.
