@@ -266,3 +266,15 @@ The four events you can watch for in Mongoose are: init, validate, save and remo
 `limit()` restricts the number of results to a query.
 
 `sort()` lets you sort the results of a query. You can pass in an object specifying which value to sort by and in which order, for example `.sort({ name: 1 })`.
+
+## Indexes
+
+An index is a system Mongo uses to make efficient queries whenever you're looking for data.
+
+Whenever you create a new collection of data, an index is automatically created on the `_id` field of every record.
+
+This lets you make very fast lookups.
+
+The `_id` property of every record is indexed by default. You have the option to create your own indexes to make lookups faster for other properties.
+
+It's common to make your own index if you have a certain property that you find yourself querying for often.
