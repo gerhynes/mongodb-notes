@@ -1,5 +1,42 @@
 # MongoDB Notes
 
+MongoDB is a document-oriented NoSQL database which stores data in JSON-like documents (BSON, a binary version of JSON). In theory, the document model maps to the objects in your application code, making it easier to work with the data.
+
+Unlike with an SQl database, you don't have to tell your database the structure of your data and the primitive types before being able to manage it. You can mix documents with different structures in the same collection of data.
+
+MongoDB is designed to store denormalized data. If the same data is required in two or more documents, it's repeated.
+
+MongoDB is designed to be a distributed database, making horizontal scaling and geographic distribution easier to deal with.
+
+## Where to use MongoDB
+
+Mongo is a database where the data of your app persists.
+
+Your database is seperated from the frontend by a web server. The web server filters any requests for data before they reach your database.
+
+Security around your data is enforced by rules that you place in your web server.
+
+Mongoose is an ORM (Object Relational Mapper) or ODM (Object Data Mapping) which helps you to work with your database.
+
+## Mongo Core Principals
+
+Mongo lets you create multiple databases inside one Mongo instance.
+
+The collection is the core unit which stores data inside a Mongo database.
+
+You will typically have one collection for each type of resource that you need to make available in your app.
+
+Ahead of time, you will design a schema for the different types of data you'll need to store in your app.
+
+## Core Mongoose and Mongo Ideas
+
+When working with a Mongo database there are four key operations:
+
+- Create
+- Read
+- Update
+- Destroy
+
 ## Review of Promises
 
 A promise is a tool for managing asynchronous code flow throughout your application. In other words, any code that will execute sometime in the future.
@@ -67,35 +104,6 @@ startGame() // Returns the promise
     "You lost";
   });
 ```
-
-## Where to use MongoDB
-
-Mongo is a database where the data of your app persists.
-
-Your database is seperated from the frontend by a web server. The web server filters any requests for data before they reach your database.
-
-Security around your data is enforced by rules that you place in your web server.
-
-Mongoose is an ORM (Object Relational Mapper) or ODM (Object Data Mapping) which helps you to work with your database.
-
-## Mongo Core Principals
-
-Mongo lets you create multiple databases inside one Mongo instance.
-
-The collection is the core unit which stores data inside a Mongo database.
-
-You will typically have one collection for each type of resource that you need to make available in your app.
-
-Ahead of time, you will design a schema for the different types of data you'll need to store in your app.
-
-## Core Mongoose and Mongo Ideas
-
-When working with a Mongo database there are four key operations:
-
-- Create
-- Read
-- Update
-- Destroy
 
 ## Models
 
