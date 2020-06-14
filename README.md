@@ -2,11 +2,13 @@
 
 MongoDB is a document-oriented NoSQL database which stores data in JSON-like documents (BSON, a binary version of JSON). In theory, the document model maps to the objects in your application code, making it easier to work with the data.
 
-Unlike with an SQl database, you don't have to tell your database the structure of your data and the primitive types before being able to manage it. You can mix documents with different structures in the same collection of data.
+Unlike with a relational/SQL database, with MongoDB you don't have to tell your database the Schema (the structure of your data and the primitive types) before being able to manage it. MongoDB is designed to store denormalized data. You can mix documents with different structures in the same collection of data.
 
-MongoDB is designed to store denormalized data. If the same data is required in two or more documents, it's repeated.
+Also, in a MongoDB database there are no relations (kind of). You can set up relations and merge/query them manually. In general, all relevant data is kept in one place. Very often, if the same data is required in two or more collections, it's repeated in each collection.
 
-MongoDB is designed to be a distributed database, making horizontal scaling and geographic distribution easier to deal with.
+In theory, having less relational merging makes for faster and more efficient queries. The downside is that you have duplicate data. But for an application where you have a lot of reads and fewer writes this works well.
+
+MongoDB is also designed to be a distributed database. Data can be split across multiple servers (which is more difficult and sometimes impossible with SQL). This lets MongoDB take advantage of cloud infrastructure, making horizontal scaling and geographic distribution easier to deal with.
 
 ## Where to use MongoDB
 
