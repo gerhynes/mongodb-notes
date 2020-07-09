@@ -295,6 +295,8 @@ To update multiple records at the same time, you need to pass in the `multi` opt
 
 ## Geospatial data with MongoDB
 
-MongoDb records geospatial data as GeoJSON objects or as coordinate pairs, in the format Longitude, Latitude.
+MongoDb records geospatial data as GeoJSON objects or as legacy coordinate pairs, in the format Longitude, Latitude.
 
 MongoDB has support for both 2d and 2d sphere queries.
+
+The unit system MongoDB uses is metres.
